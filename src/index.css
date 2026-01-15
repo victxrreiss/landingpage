@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === CONFIGURAÇÕES GLOBAIS === */
+@layer base {
+  body {
+    /* CORREÇÃO CRÍTICA PARA MOBILE: */
+    /* Impede que as animações de entrada (que vêm dos lados) criem */
+    /* uma rolagem horizontal indesejada, que corta o menu. */
+    overflow-x: hidden;
+
+    /* Configurações padrão de fonte e cores para suavidade */
+    @apply antialiased text-gray-900 bg-white dark:bg-gray-950 text-base transition-colors duration-300;
+  }
+
+  /* Garante que o HTML também não permita overflow lateral */
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Rolagem suave para links âncora */
+  }
+}
+
+/* === SCROLLBAR PERSONALIZADA (Webkit: Chrome, Edge, Safari) === */
+
+/* Define a largura da barra */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* O "trilho" por onde a barra corre (Fundo Light) */
+::-webkit-scrollbar-track {
+  background: #f9fafb; /* gray-50 */
+}
+
+/* A "peça" que se move (Thumb Light) */
+::-webkit-scrollbar-thumb {
+  background-color: #d1d5db; /* gray-300 */
+  border-radius: 9999px; /* Pílula */
+  border: 2px solid #f9fafb; /* Borda para efeito flutuante */
+}
+
+/* Hover no Thumb Light */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af; /* gray-400 */
+}
+
+/* === SCROLLBAR DARK MODE === */
+
+/* Trilho Dark */
+html.dark ::-webkit-scrollbar-track {
+  background: #030712; /* gray-950 */
+}
+
+/* Thumb Dark */
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: #374151; /* gray-700 */
+  border: 2px solid #030712; /* Borda escura para efeito flutuante */
+}
+
+/* Hover no Thumb Dark */
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #4b5563; /* gray-600 */
+}
+
+/* === SUPORTE AO FIREFOX (Padrão W3C) === */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #f9fafb; /* Thumb / Track */
+}
+
+html.dark {
+  scrollbar-color: #374151 #030712; /* Thumb / Track */
+}
