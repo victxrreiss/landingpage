@@ -2,29 +2,31 @@
 
 ### 🔗 [Clique aqui para ver o Template Online](https://landing-page-wine-mu.vercel.app/)
 
-Um template moderno, performático e modular para Landing Pages. Desenvolvido com **React**, **Vite** e **Tailwind CSS**.
+Um template **White Label**, moderno e performático para Landing Pages. Desenvolvido com **React**, **Vite** e **Tailwind CSS**.
 
-Este projeto foi arquitetado como uma **SPA (Single Page Application)** com roteamento no lado do cliente, ideal para hospedagem gratuita em plataformas como a Vercel.
+Este projeto foi arquitetado como uma **SPA (Single Page Application)** altamente personalizável. Todo o conteúdo (textos, preços, links e contatos) é gerenciado através de um único arquivo de configuração (`src/config/content.jsx`), permitindo a criação rápida de sites para SaaS ou serviços.
 
 ## 🚀 Tecnologias Utilizadas
 
 - **[React](https://react.dev/)**: Biblioteca para construção da interface.
 - **[Vite](https://vitejs.dev/)**: Tooling de frontend ultrarrápido.
 - **[Tailwind CSS](https://tailwindcss.com/)**: Framework de estilização utility-first.
+- **[Framer Motion](https://www.framer.com/motion/)**: Biblioteca para animações de entrada (Scroll Reveal).
+- **[React Helmet Async](https://github.com/staylor/react-helmet-async)**: Gerenciamento de SEO e Meta Tags dinâmicas.
 - **[React Router DOM](https://reactrouter.com/)**: Gerenciamento de rotas (Navegação SPA).
 - **[Lucide React](https://lucide.dev/)**: Biblioteca de ícones leve e consistente.
 
 ## 📂 Estrutura do Projeto
 
-A arquitetura foi pensada para facilitar a personalização:
-
 ```text
 src/
 ├── components/
 │   ├── layout/      # Navbar, Footer e estruturas fixas
-│   ├── sections/    # Blocos da Landing Page (Hero, Pricing, Features...)
-│   ├── ui/          # Elementos base reutilizáveis (Botões, Inputs...)
-│   └── utils/       # Funções auxiliares (ScrollToTop, etc)
+│   ├── sections/    # Hero, Pricing, Features (Consomem o config)
+│   ├── ui/          # Elementos base reutilizáveis (Botões, Toggle de Tema)
+│   └── utils/       # Animações (ScrollAnimation) e Utilitários
+├── config/
+│   └── content.jsx  # 🧠 ARQUIVO DE CONFIGURAÇÃO (Edite aqui)
 ├── pages/           # Páginas de conteúdo (Home, Termos, Docs...)
 └── App.jsx          # Configuração de Rotas
 ```
