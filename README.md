@@ -26,7 +26,7 @@ src/
 │   ├── ui/          # Elementos base reutilizáveis (Botões, Toggle de Tema)
 │   └── utils/       # Animações (ScrollAnimation) e Utilitários
 ├── config/
-│   └── content.jsx  # 🧠 ARQUIVO DE CONFIGURAÇÃO (Edite aqui)
+│   └── content.jsx  # Arquivo de configuração
 ├── pages/           # Páginas de conteúdo (Home, Termos, Docs...)
 └── App.jsx          # Configuração de Rotas
 ```
